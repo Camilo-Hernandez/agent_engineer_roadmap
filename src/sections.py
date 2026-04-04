@@ -72,13 +72,61 @@ def build_section_rag():
         "su entrenamiento.",
         styles["BD"],
     ))
+    elements.append(Paragraph("<b>Courses</b>", styles["BD"]))
     elements.extend(resource_block(
         "DeepLearning.AI — Retrieval Augmented Generation (RAG)",
-        "Curso gratuito de Andrew Ng. RAG basico a agentic RAG avanzado: "
-        "chunking, embeddings, vector search, evaluacion, integracion en "
-        "workflows agenticos.",
-        "https://deeplearning.ai/short-courses/",
+        "Curso gratis de Andrew Ng para dominar chunking, embeddings, vector search y agentic RAG.",
+        "https://www.deeplearning.ai/courses/retrieval-augmented-generation-rag/",
         [("GRATUITO", FREE)],
+    ))
+    elements.extend(resource_block(
+        "DeepLearning.AI — Building Applications with Vector Databases",
+        "Curso corto y practico para embeddings, similarity search y patrones de retrieval.",
+        "https://www.deeplearning.ai/short-courses/building-applications-vector-databases/",
+        [("GRATUITO", FREE)],
+    ))
+    elements.extend(resource_block(
+        "DeepLearning.AI — Knowledge Graphs for RAG",
+        "Curso para sumar grafos de conocimiento y retrieval estructurado a un RAG.",
+        "https://www.deeplearning.ai/short-courses/knowledge-graphs-rag/",
+        [("GRATUITO", FREE)],
+    ))
+    elements.append(Paragraph("<b>Docs/Tutorials</b>", styles["BD"]))
+    elements.extend(resource_block(
+        "Google Cloud — Vertex AI RAG Engine",
+        "Docs y quickstart oficiales para RAG administrado en Vertex AI, con ingestion y grounding sobre datos propios.",
+        "https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-overview | https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
+        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+    ))
+    elements.extend(resource_block(
+        "Google Cloud — Grounding with Vertex AI Search",
+        "Guia oficial para conectar Gemini a data stores y buscadores propios con grounding enterprise.",
+        "https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+    ))
+    elements.extend(resource_block(
+        "NVIDIA — Deep Agents for Enterprise Search with AI-Q and LangChain",
+        "Tutorial oficial para agentes de busqueda enterprise con RAG, subagentes y tracing.",
+        "https://developer.nvidia.com/blog/how-to-build-deep-agents-for-enterprise-search-with-nvidia-ai-q-and-langchain/",
+        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+    ))
+    elements.extend(resource_block(
+        "NVIDIA — Document Processing Pipeline for RAG with Nemotron",
+        "Guia oficial para extraer PDFs, generar embeddings, rerankear y citar fuentes.",
+        "https://developer.nvidia.com/blog/how-to-build-a-document-processing-pipeline-for-rag-with-nemotron/",
+        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+    ))
+    elements.extend(resource_block(
+        "Google Developers Codelabs — Building AI Agents with Vertex AI Agent Builder",
+        "Codelab oficial y gratuito para construir agentes y apps LLM con Vertex AI Agent Builder; muy buen fit para patrones agenticos y retrieval.",
+        "https://codelabs.developers.google.com/devsite/codelabs/building-ai-agents-vertexai",
+        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+    ))
+    elements.extend(resource_block(
+        "OpenAI — File search y function calling",
+        "Docs oficiales para retrieval sobre archivos y tool use en asistentes y flujos agenticos.",
+        "https://platform.openai.com/docs/guides/file-search | https://platform.openai.com/docs/guides/function-calling",
+        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
     ))
     return elements
 
