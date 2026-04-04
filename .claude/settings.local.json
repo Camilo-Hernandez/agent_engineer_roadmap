@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -L -o /c/Users/USUARIO/Documents/PythonProjects/agent_engineer_roadmap/assets/gmail_icon.png \"https://pngimg.com/uploads/gmail_logo/small/gmail_logo_PNG12.png\")",
+      "Bash(gh api:*)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:youtu.be)",
+      "WebFetch(domain:anthropic.skilljar.com)",
+      "WebFetch(domain:skills.sh)",
+      "WebFetch(domain:agentskill.sh)",
+      "WebFetch(domain:skillstore.io)",
+      "WebFetch(domain:www.skillsdirectory.org)",
+      "WebFetch(domain:deeplearning.ai)",
+      "WebFetch(domain:academy.langchain.com)",
+      "WebFetch(domain:docs.langchain.com)",
+      "WebFetch(domain:unsloth.ai)",
+      "WebFetch(domain:www.decodingai.com)",
+      "WebFetch(domain:ollama.com)",
+      "WebFetch(domain:www.sitepoint.com)",
+      "WebFetch(domain:docs.crewai.com)",
+      "WebFetch(domain:microsoft.github.io)",
+      "WebFetch(domain:adventofagents.com)",
+      "WebFetch(domain:aws.amazon.com)",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:railway.app)",
+      "WebFetch(domain:render.com)",
+      "WebFetch(domain:fly.io)",
+      "WebFetch(domain:www.digitalocean.com)",
+      "WebFetch(domain:railway.com)"
+    ]
+  }
+}
