@@ -8,8 +8,10 @@ def section_divider(title, number):
     return [
         Spacer(1, 6),
         HRFlowable(
-            width="100%", thickness=0.5,
-            color=DIVIDER_COLOR, spaceAfter=2,
+            width="100%",
+            thickness=0.5,
+            color=DIVIDER_COLOR,
+            spaceAfter=2,
         ),
         Paragraph(f"{number}. {title}", styles["SH"]),
     ]

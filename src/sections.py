@@ -4,363 +4,549 @@ from .config import styles, FREE, OFFICIAL, COMMUNITY
 from .helpers import section_divider, resource_block
 
 
-def build_section_agent_skills():
+def build_section_agent_skills(number):
     """1. Agent Skills"""
-    elements = section_divider("Agent Skills (Estándar Abierto)", "1")
-    elements.append(Paragraph(
-        "Agent Skills es un estandar abierto: carpetas con SKILL.md que "
-        "cualquier LLM o agente puede usar. Adoptado por Claude, OpenAI Codex, "
-        "Cursor, OpenClaw, Spring AI, Letta, Roo Code, y mas. Escribe una vez, "
-        "usa en cualquier plataforma.",
-        styles["BD"],
-    ))
-    elements.extend(resource_block(
-        "Introducing Agent Skills — Video oficial (YouTube)",
-        "Presentacion oficial del estandar Agent Skills: que son, como "
-        "funcionan, y por que son la forma mas eficiente de extender "
-        "capacidades de cualquier agente o LLM.",
-        "https://www.youtube.com/watch?v=hXgunHDwMR8 | https://youtu.be/eWY6bHtid1o",
-        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
-    ))
-    elements.extend(resource_block(
-        "Anthropic Academy — Introduction to Agent Skills",
-        "Curso oficial: crear Skills, distribuir con plugins, conexion con "
-        "subagentes, troubleshooting.",
-        "https://anthropic.skilljar.com/introduction-to-agent-skills",
-        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
-    ))
-    elements.extend(resource_block(
-        "Repositorios de Skills",
-        "github.com/anthropics/skills: 17+ skills open-source oficiales "
-        "(docx, pdf, pptx, xlsx, frontend-design, MCP builder). "
-        "skills.sh: directorio de la comunidad con skills de terceros "
-        "listos para instalar. "
-        "agentskill.sh: directorio de 44k+ skills con escaneo de seguridad "
-        "en dos capas e instalador /learn. "
-        "Skillstore: marketplace curado de Agent Skills. "
-        "SkillsDirectory: directorio de las skills mas populares.",
-        "https://github.com/anthropics/skills | https://skills.sh/ | "
-        "https://agentskill.sh | https://skillstore.io | https://www.skillsdirectory.org",
-        [("GRATUITO", FREE), ("OPEN SOURCE", COMMUNITY)],
-    ))
-    elements.extend(resource_block(
-        "Especificacion oficial — agentskills.io",
-        "La especificacion completa del estandar. Formato SKILL.md con YAML "
-        "frontmatter, progressive disclosure (metadata -> body -> archivos "
-        "extra), y guias de integracion.",
-        "https://agentskills.io/specification",
-        [("GRATUITO", FREE), ("ESTANDAR ABIERTO", COMMUNITY)],
-    ))
-    elements.extend(resource_block(
-        "awesome-agent-skills — Indice del ecosistema completo",
-        "Catalogos de skills de Anthropic, OpenAI, Microsoft, Google, Vercel, "
-        "Supabase, HuggingFace, OpenClaw. Herramientas de authoring, "
-        "validacion, y papers academicos.",
-        "https://github.com/skillmatic-ai/awesome-agent-skills",
-        [("GRATUITO", FREE), ("OPEN SOURCE", COMMUNITY)],
-    ))
-    return elements
-
-
-def build_section_rag():
-    """2. RAG (Retrieval-Augmented Generation)"""
-    elements = section_divider("RAG (Retrieval-Augmented Generation)", "2")
-    elements.append(Paragraph(
-        "Tecnica que permite a los LLMs consultar fuentes externas "
-        "(documentos, bases de datos, APIs) antes de responder, produciendo "
-        "respuestas mas precisas y actualizadas en lugar de depender solo de "
-        "su entrenamiento.",
-        styles["BD"],
-    ))
+    elements = section_divider("Agent Skills (Estándar Abierto)", number)
+    elements.append(
+        Paragraph(
+            "Agent Skills es un estandar abierto: carpetas con SKILL.md que "
+            "cualquier LLM o agente puede usar. Adoptado por Claude, OpenAI Codex, "
+            "Cursor, OpenClaw, Spring AI, Letta, Roo Code, y mas. Escribe una vez, "
+            "usa en cualquier plataforma.",
+            styles["BD"],
+        )
+    )
     elements.append(Paragraph("<b>Courses</b>", styles["BD"]))
-    elements.extend(resource_block(
-        "DeepLearning.AI — Retrieval Augmented Generation (RAG)",
-        "Curso gratis de Andrew Ng para dominar chunking, embeddings, vector search y agentic RAG.",
-        "https://www.deeplearning.ai/courses/retrieval-augmented-generation-rag/",
-        [("GRATUITO", FREE)],
-    ))
-    elements.extend(resource_block(
-        "DeepLearning.AI — Building Applications with Vector Databases",
-        "Curso corto y practico para embeddings, similarity search y patrones de retrieval.",
-        "https://www.deeplearning.ai/short-courses/building-applications-vector-databases/",
-        [("GRATUITO", FREE)],
-    ))
-    elements.extend(resource_block(
-        "DeepLearning.AI — Knowledge Graphs for RAG",
-        "Curso para sumar grafos de conocimiento y retrieval estructurado a un RAG.",
-        "https://www.deeplearning.ai/short-courses/knowledge-graphs-rag/",
-        [("GRATUITO", FREE)],
-    ))
+    elements.extend(
+        resource_block(
+            "Introducing Agent Skills — Video oficial (YouTube)",
+            "Presentacion oficial del estandar y su flujo de trabajo basico.",
+            "https://www.youtube.com/watch?v=hXgunHDwMR8",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
+    return elements
+
+
+def build_section_rag(number):
+    """2. RAG (Retrieval-Augmented Generation)"""
+    elements = section_divider("RAG (Retrieval-Augmented Generation)", number)
+    elements.append(
+        Paragraph(
+            "Tecnica que permite a los LLMs consultar fuentes externas "
+            "(documentos, bases de datos, APIs) antes de responder, produciendo "
+            "respuestas mas precisas y actualizadas en lugar de depender solo de "
+            "su entrenamiento.",
+            styles["BD"],
+        )
+    )
+    elements.append(Paragraph("<b>Courses</b>", styles["BD"]))
+    elements.extend(
+        resource_block(
+            "DeepLearning.AI — Retrieval Augmented Generation (RAG)",
+            "Curso gratis de Andrew Ng para dominar chunking, embeddings, vector search y agentic RAG.",
+            "https://www.deeplearning.ai/courses/retrieval-augmented-generation-rag/",
+            [("GRATUITO", FREE)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "DeepLearning.AI — Building Applications with Vector Databases",
+            "Curso corto y practico para embeddings, similarity search y patrones de retrieval.",
+            "https://www.deeplearning.ai/short-courses/building-applications-vector-databases/",
+            [("GRATUITO", FREE)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "DeepLearning.AI — Knowledge Graphs for RAG",
+            "Curso para sumar grafos de conocimiento y retrieval estructurado a un RAG.",
+            "https://www.deeplearning.ai/short-courses/knowledge-graphs-rag/",
+            [("GRATUITO", FREE)],
+        )
+    )
     elements.append(Paragraph("<b>Docs/Tutorials</b>", styles["BD"]))
-    elements.extend(resource_block(
-        "Google Cloud — Vertex AI RAG Engine",
-        "Docs y quickstart oficiales para RAG administrado en Vertex AI, con ingestion y grounding sobre datos propios.",
-        "https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-overview | https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
-        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
-    ))
-    elements.extend(resource_block(
-        "Google Cloud — Grounding with Vertex AI Search",
-        "Guia oficial para conectar Gemini a data stores y buscadores propios con grounding enterprise.",
-        "https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
-        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
-    ))
-    elements.extend(resource_block(
-        "NVIDIA — Deep Agents for Enterprise Search with AI-Q and LangChain",
-        "Tutorial oficial para agentes de busqueda enterprise con RAG, subagentes y tracing.",
-        "https://developer.nvidia.com/blog/how-to-build-deep-agents-for-enterprise-search-with-nvidia-ai-q-and-langchain/",
-        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
-    ))
-    elements.extend(resource_block(
-        "NVIDIA — Document Processing Pipeline for RAG with Nemotron",
-        "Guia oficial para extraer PDFs, generar embeddings, rerankear y citar fuentes.",
-        "https://developer.nvidia.com/blog/how-to-build-a-document-processing-pipeline-for-rag-with-nemotron/",
-        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
-    ))
-    elements.extend(resource_block(
-        "Google Developers Codelabs — Building AI Agents with Vertex AI Agent Builder",
-        "Codelab oficial y gratuito para construir agentes y apps LLM con Vertex AI Agent Builder; muy buen fit para patrones agenticos y retrieval.",
-        "https://codelabs.developers.google.com/devsite/codelabs/building-ai-agents-vertexai",
-        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
-    ))
-    elements.extend(resource_block(
-        "OpenAI — File search y function calling",
-        "Docs oficiales para retrieval sobre archivos y tool use en asistentes y flujos agenticos.",
-        "https://platform.openai.com/docs/guides/file-search | https://platform.openai.com/docs/guides/function-calling",
-        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
-    ))
+    elements.extend(
+        resource_block(
+            "Google Cloud — Vertex AI RAG Engine",
+            "Docs y quickstart oficiales para RAG administrado en Vertex AI, con ingestion y grounding sobre datos propios.",
+            "https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-overview | https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/rag-quickstart",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Google Cloud — Grounding with Vertex AI Search",
+            "Guia oficial para conectar Gemini a data stores y buscadores propios con grounding enterprise.",
+            "https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "NVIDIA — Deep Agents for Enterprise Search with AI-Q and LangChain",
+            "Tutorial oficial para agentes de busqueda enterprise con RAG, subagentes y tracing.",
+            "https://developer.nvidia.com/blog/how-to-build-deep-agents-for-enterprise-search-with-nvidia-ai-q-and-langchain/",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "NVIDIA — Document Processing Pipeline for RAG with Nemotron",
+            "Guia oficial para extraer PDFs, generar embeddings, rerankear y citar fuentes.",
+            "https://developer.nvidia.com/blog/how-to-build-a-document-processing-pipeline-for-rag-with-nemotron/",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Google Developers Codelabs — Building AI Agents with Vertex AI Agent Builder",
+            "Codelab oficial y gratuito para construir agentes y apps LLM con Vertex AI Agent Builder; muy buen fit para patrones agenticos y retrieval.",
+            "https://codelabs.developers.google.com/devsite/codelabs/building-ai-agents-vertexai",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "OpenAI — File search y function calling",
+            "Docs oficiales para retrieval sobre archivos y tool use en asistentes y flujos agenticos.",
+            "https://platform.openai.com/docs/guides/file-search | https://platform.openai.com/docs/guides/function-calling",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
     return elements
 
 
-def build_section_langchain():
+def build_section_langchain(number):
     """3. LangChain + LangGraph"""
-    elements = section_divider("LangChain + LangGraph", "3")
-    elements.append(Paragraph(
-        "LangChain es el framework mas popular para construir aplicaciones "
-        "con LLMs: cadenas de prompts, herramientas, y agentes. LangGraph lo "
-        "extiende con grafos de estado que permiten memoria, iteracion, logica "
-        "condicional, y workflows multi-agente complejos.",
-        styles["BD"],
-    ))
-    elements.extend(resource_block(
-        "LangChain Academy — Introduction to LangGraph",
-        "Curso oficial gratuito. 6 modulos: state, nodes, edges, memory, "
-        "human-in-the-loop, deployment.",
-        "https://academy.langchain.com/courses/intro-to-langgraph",
-        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
-    ))
-    elements.extend(resource_block(
-        "DeepLearning.AI — AI Agents in LangGraph",
-        "Por Harrison Chase. Agente desde cero, LangGraph, agentic search, "
-        "persistencia.",
-        "https://deeplearning.ai/short-courses/ai-agents-in-langgraph/",
-        [("GRATUITO", FREE)],
-    ))
-    elements.extend(resource_block(
-        "DeepLearning.AI — Long-Term Agentic Memory",
-        "Memoria semantica, episodica, procedural. Proyecto: email agent con "
-        "routing.",
-        "https://deeplearning.ai/short-courses/long-term-agentic-memory-with-langgraph/",
-        [("GRATUITO", FREE)],
-    ))
-    elements.extend(resource_block(
-        "Docs oficiales LangChain/LangGraph",
-        "Tutoriales, RAG agents, SQL agents, multi-agent patterns. Codigo "
-        "fuente completo.",
-        "https://docs.langchain.com/oss/python/learn | https://github.com/langchain-ai/langgraph",
-        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
-    ))
+    elements = section_divider("LangChain + LangGraph", number)
+    elements.append(
+        Paragraph(
+            "LangChain es el framework mas popular para construir aplicaciones "
+            "con LLMs: cadenas de prompts, herramientas, y agentes. LangGraph lo "
+            "extiende con grafos de estado que permiten memoria, iteracion, logica "
+            "condicional, y workflows multi-agente complejos.",
+            styles["BD"],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "LangChain Academy — Introduction to LangGraph",
+            "Curso oficial gratuito. 6 modulos: state, nodes, edges, memory, "
+            "human-in-the-loop, deployment.",
+            "https://academy.langchain.com/courses/intro-to-langgraph",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "DeepLearning.AI — AI Agents in LangGraph",
+            "Por Harrison Chase. Agente desde cero, LangGraph, agentic search, "
+            "persistencia.",
+            "https://deeplearning.ai/short-courses/ai-agents-in-langgraph/",
+            [("GRATUITO", FREE)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "DeepLearning.AI — Long-Term Agentic Memory",
+            "Memoria semantica, episodica, procedural. Proyecto: email agent con "
+            "routing.",
+            "https://deeplearning.ai/short-courses/long-term-agentic-memory-with-langgraph/",
+            [("GRATUITO", FREE)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Docs oficiales LangChain/LangGraph",
+            "Tutoriales, RAG agents, SQL agents, multi-agent patterns. Codigo "
+            "fuente completo.",
+            "https://docs.langchain.com/oss/python/learn | https://github.com/langchain-ai/langgraph",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
     return elements
 
 
-def build_section_mcp():
+def build_section_mcp(number):
     """4. MCP (Model Context Protocol)"""
-    elements = section_divider("MCP (Model Context Protocol)", "4")
-    elements.append(Paragraph(
-        "Protocolo abierto creado por Anthropic que estandariza como los LLMs "
-        "se conectan a herramientas externas, bases de datos, y APIs. Funciona "
-        "como un USB-C universal: un solo protocolo para que cualquier modelo "
-        "acceda a cualquier servicio, reemplazando integraciones custom por "
-        "conexion via servidores MCP reutilizables.",
-        styles["BD"],
-    ))
-    elements.extend(resource_block(
-        "Hugging Face — MCP Course (con Anthropic)",
-        "Curso gratuito con Anthropic. Asignaciones practicas, challenges, "
-        "certificado.",
-        "https://huggingface.co/learn/mcp-course/",
-        [("GRATUITO", FREE), ("CERTIFICADO", COMMUNITY)],
-    ))
-    elements.extend(resource_block(
-        "Anthropic — Introduction to Model Context Protocol",
-        "Arquitectura MCP, primitivas (tools, resources, prompts), Python SDK, "
-        "MCP Inspector.",
-        "https://anthropic.skilljar.com/introduction-to-model-context-protocol",
-        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
-    ))
-    elements.extend(resource_block(
-        "Microsoft — MCP for Beginners (GitHub)",
-        "Open-source: Python, TypeScript, .NET, Java, Rust. Spec MCP 2025-11-25.",
-        "https://github.com/microsoft/mcp-for-beginners",
-        [("GRATUITO", FREE), ("OPEN SOURCE", COMMUNITY)],
-    ))
+    elements = section_divider("MCP (Model Context Protocol)", number)
+    elements.append(
+        Paragraph(
+            "Protocolo abierto creado por Anthropic que estandariza como los LLMs "
+            "se conectan a herramientas externas, bases de datos, y APIs. Funciona "
+            "como un USB-C universal: un solo protocolo para que cualquier modelo "
+            "acceda a cualquier servicio, reemplazando integraciones custom por "
+            "conexion via servidores MCP reutilizables.",
+            styles["BD"],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Hugging Face — MCP Course (con Anthropic)",
+            "Curso gratuito con Anthropic. Asignaciones practicas, challenges, "
+            "certificado.",
+            "https://huggingface.co/learn/mcp-course/",
+            [("GRATUITO", FREE), ("CERTIFICADO", COMMUNITY)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Anthropic — Introduction to Model Context Protocol",
+            "Arquitectura MCP, primitivas (tools, resources, prompts), Python SDK, "
+            "MCP Inspector.",
+            "https://anthropic.skilljar.com/introduction-to-model-context-protocol",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Microsoft — MCP for Beginners (GitHub)",
+            "Open-source: Python, TypeScript, .NET, Java, Rust. Spec MCP 2025-11-25.",
+            "https://github.com/microsoft/mcp-for-beginners",
+            [("GRATUITO", FREE), ("OPEN SOURCE", COMMUNITY)],
+        )
+    )
     return elements
 
 
-def build_section_local_llms():
+def build_section_local_llms(number):
     """5. LLMs Locales — Fine-Tuning y Deploy On-Premise"""
-    elements = section_divider("LLMs Locales — Fine-Tuning y Deploy On-Premise", "5")
-    elements.append(Paragraph(
-        "Descargar modelos open-weight (Llama, Qwen, DeepSeek, Mistral, "
-        "gpt-oss de OpenAI), hacer fine-tuning con LoRA/QLoRA para tareas "
-        "especificas de empresa, convertir a GGUF, y servir localmente con "
-        "Ollama, LM Studio, o vLLM. Privacidad total, sin costos por token, "
-        "y modelos especializados en tu dominio.",
-        styles["BD"],
-    ))
-    elements.extend(resource_block(
-        "Unsloth — Docs + Notebooks en Google Colab",
-        "Fine-tuning completo: QLoRA vs LoRA, datasets, GGUF para Ollama. "
-        "Modelo 8B en GPU 12GB.",
-        "https://unsloth.ai/docs | https://github.com/unslothai/unsloth",
-        [("GRATUITO", FREE), ("OPEN SOURCE", COMMUNITY)],
-    ))
-    elements.extend(resource_block(
-        "Hugging Face — Unsloth + TRL",
-        "Tutorial oficial HF. Compatible con Hub, transformers, PEFT.",
-        "https://huggingface.co/blog/unsloth-trl",
-        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
-    ))
-    elements.extend(resource_block(
-        "HF + Unsloth — Fine-tuning gratis en HF Jobs",
-        "Creditos gratuitos para fine-tunear en infra cloud de HF.",
-        "https://huggingface.co/blog/unsloth-jobs",
-        [("GRATUITO", FREE), ("CREDITOS GRATIS", COMMUNITY)],
-    ))
-    elements.extend(resource_block(
-        "Decodingml — Fine-tune and Deploy Open-Source LLMs",
-        "Pipeline completo: APIs de prototipo a modelos open-source on-prem.",
-        "https://www.decodingai.com/",
-        [("GRATUITO", FREE), ("OPEN SOURCE", COMMUNITY)],
-    ))
-    elements.extend(resource_block(
-        "Ollama — Docs oficiales",
-        "Llama, DeepSeek, Qwen local. Compatible LangChain/RAG. "
-        "macOS/Linux/Windows/Docker.",
-        "https://ollama.com | https://github.com/ollama/ollama",
-        [("GRATUITO", FREE), ("OPEN SOURCE", COMMUNITY)],
-    ))
-    elements.extend(resource_block(
-        "SitePoint — Fine-Tune Local LLMs 2026",
-        "Guia end-to-end: fine-tuning vs RAG vs prompting, Unsloth, GGUF, "
-        "Ollama + FastAPI.",
-        "https://www.sitepoint.com/fine-tune-local-llms-2026/",
-        [("GRATUITO", FREE)],
-    ))
+    elements = section_divider("LLMs Locales — Fine-Tuning y Deploy On-Premise", number)
+    elements.append(
+        Paragraph(
+            "Descargar modelos open-weight (Gemma, Llama, Qwen, DeepSeek, Mistral, "
+            "gpt-oss de OpenAI), hacer fine-tuning con LoRA/QLoRA para tareas "
+            "especificas de empresa, convertir a GGUF, y servir localmente con "
+            "Ollama, LM Studio, o vLLM. Privacidad total, sin costos por token, "
+            "y modelos especializados en tu dominio.",
+            styles["BD"],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Google — Gemma 4 (introduccion)",
+            "Familia open-weight de Google con licencia Apache 2.0. "
+            "Multimodal, multilingual, contexto 128K. Corre en Ollama y HF.",
+            "https://youtu.be/W2xVSO6eUWY | https://youtu.be/0mSdAr7RFZU",
+            [("GRATUITO", FREE), ("OPEN SOURCE", COMMUNITY)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Unsloth — Docs + Notebooks en Google Colab",
+            "Fine-tuning completo: QLoRA vs LoRA, datasets, GGUF para Ollama. "
+            "Modelo 8B en GPU 12GB.",
+            "https://unsloth.ai/docs | https://github.com/unslothai/unsloth",
+            [("GRATUITO", FREE), ("OPEN SOURCE", COMMUNITY)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Hugging Face — Unsloth + TRL",
+            "Tutorial oficial HF. Compatible con Hub, transformers, PEFT.",
+            "https://huggingface.co/blog/unsloth-trl",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "HF + Unsloth — Fine-tuning gratis en HF Jobs",
+            "Creditos gratuitos para fine-tunear en infra cloud de HF.",
+            "https://huggingface.co/blog/unsloth-jobs",
+            [("GRATUITO", FREE), ("CREDITOS GRATIS", COMMUNITY)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Decodingml — Fine-tune and Deploy Open-Source LLMs",
+            "Pipeline completo: APIs de prototipo a modelos open-source on-prem.",
+            "https://www.decodingai.com/",
+            [("GRATUITO", FREE), ("OPEN SOURCE", COMMUNITY)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Ollama — Docs oficiales",
+            "Llama, DeepSeek, Qwen local. Compatible LangChain/RAG. "
+            "macOS/Linux/Windows/Docker.",
+            "https://ollama.com | https://github.com/ollama/ollama",
+            [("GRATUITO", FREE), ("OPEN SOURCE", COMMUNITY)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "SitePoint — Fine-Tune Local LLMs 2026",
+            "Guia end-to-end: fine-tuning vs RAG vs prompting, Unsloth, GGUF, "
+            "Ollama + FastAPI.",
+            "https://www.sitepoint.com/fine-tune-local-llms-2026/",
+            [("GRATUITO", FREE)],
+        )
+    )
     return elements
 
 
-def build_section_multi_agent():
+def build_section_multi_agent(number):
     """6. Sistemas Multi-Agente"""
-    elements = section_divider("Sistemas Multi-Agente (CrewAI, AG2/AutoGen)", "6")
-    elements.append(Paragraph(
-        "Frameworks para crear equipos de agentes de IA que colaboran entre "
-        "si: cada agente tiene un rol especializado (investigador, escritor, "
-        "critico) y se comunican para resolver tareas complejas que un solo "
-        "agente no podria manejar.",
-        styles["BD"],
-    ))
-    elements.extend(resource_block(
-        "DeepLearning.AI — CrewAI y multi-agent systems",
-        "Orquestacion, collaboration patterns, workflows especializados.",
-        "https://deeplearning.ai/short-courses/",
-        [("GRATUITO", FREE)],
-    ))
-    elements.extend(resource_block(
-        "Docs oficiales CrewAI y AutoGen",
-        "CrewAI: workflows estructurados. AutoGen: conversaciones multi-agente.",
-        "https://docs.crewai.com | https://microsoft.github.io/autogen",
-        [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
-    ))
+    elements = section_divider("Sistemas Multi-Agente (CrewAI, AG2/AutoGen)", number)
+    elements.append(
+        Paragraph(
+            "Frameworks para crear equipos de agentes de IA que colaboran entre "
+            "si: cada agente tiene un rol especializado (investigador, escritor, "
+            "critico) y se comunican para resolver tareas complejas que un solo "
+            "agente no podria manejar.",
+            styles["BD"],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "DeepLearning.AI — Design, Develop, and Deploy Multi-Agent Systems with CrewAI",
+            "Aprende a construir sistemas multi-agente que automaticen flujos de trabajo complejos end-to-end.",
+            "https://learn.deeplearning.ai/courses/design-develop-and-deploy-multi-agent-systems-with-crewai/lesson/rc39v/welcome | https://docs.crewai.com",
+            [("GRATUITO", FREE)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Framework AutoGen para sistemas multi-agente",
+            "AutoGen: conversaciones multi-agente.",
+            "https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/ | https://microsoft.github.io/autogen",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "AG2 — Fork open source de AutoGen (formerly AutoGen)",
+            "AG2 es la evolucion independiente de AutoGen 0.2, mantenida por la comunidad bajo la org ag2ai. "
+            "Misma API (import autogen), licencia Apache 2.0, con roadmap propio separado de Microsoft.",
+            "https://ag2.ai | https://github.com/ag2ai/ag2 | https://docs.ag2.ai",
+            [("GRATUITO", FREE), ("OPEN SOURCE", COMMUNITY)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Google ADK — Agent Development Kit",
+            "Framework oficial de Google para construir sistemas multi-agente. Disponible en Python, TypeScript, Go y Java. "
+            "Soporta LLM agents, Workflow agents (sequential, loop, parallel nativo) y Custom agents. "
+            "Incluye el protocolo A2A (Agent-to-Agent) para comunicacion entre agentes de distintos frameworks. "
+            "Integracion nativa con Google Cloud (Vertex AI, Cloud Run, GKE).",
+            "https://google.github.io/adk-docs/ | https://github.com/google/adk-python",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Amazon Bedrock Agents — Multi-agent en AWS",
+            "Servicio administrado de AWS para construir sistemas multi-agente sin gestionar infraestructura. "
+            "Modelo supervisor + colaboradores: cada agente tiene rol especializado, acceso a APIs (action groups), "
+            "knowledge bases (RAG), guardrails y memory retention. "
+            "Ideal para stacks AWS enterprise. Alto vendor lock-in vs frameworks open source. "
+            "AgentCore permite ademas deployar agentes de cualquier framework (AG2, ADK) en infraestructura AWS.",
+            "https://aws.amazon.com/bedrock/agents/ | https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
+            [("PAGO", OFFICIAL), ("AWS", OFFICIAL)],
+        )
+    )
     return elements
 
 
-def build_section_multimodal():
+def build_section_multimodal(number):
     """7. IA Multimodal"""
-    elements = section_divider("IA Multimodal", "7")
-    elements.append(Paragraph(
-        "Modelos que procesan y generan multiples tipos de datos: texto, "
-        "imagenes, audio, y video. Permite construir aplicaciones que entienden "
-        "fotos, transcriben voz, generan imagenes, y combinan todo en un solo "
-        "flujo de trabajo.",
-        styles["BD"],
-    ))
-    elements.extend(resource_block(
-        "DeepLearning.AI — Short courses multimodales",
-        "Whisper (audio), CLIP (imagen-texto), vision, generacion de imagenes.",
-        "https://deeplearning.ai/short-courses/",
-        [("GRATUITO", FREE)],
-    ))
+    elements = section_divider("IA Multimodal", number)
+    elements.append(
+        Paragraph(
+            "Modelos que procesan y generan multiples tipos de datos: texto, "
+            "imagenes, audio, y video. Permite construir aplicaciones que entienden "
+            "fotos, transcriben voz, generan imagenes, y combinan todo en un solo "
+            "flujo de trabajo.",
+            styles["BD"],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "DeepLearning.AI — Short courses (multimodal)",
+            "Catalogo corto con cursos sobre audio, vision y generacion multimodal.",
+            "https://deeplearning.ai/short-courses/",
+            [("GRATUITO", FREE)],
+        )
+    )
     return elements
 
 
-def build_section_deploy():
+def build_section_deploy(number):
     """8. Deploy a Produccion (Multi-Cloud)"""
-    elements = section_divider("Deploy a Produccion (Multi-Cloud)", "8")
-    elements.append(Paragraph(
-        "Llevar tu aplicacion de IA desde tu maquina local a servidores "
-        "accesibles al mundo. Desde plataformas simples (push-to-deploy en un "
-        "click) hasta AWS enterprise con Lambda serverless. Cada opcion tiene "
-        "trade-offs de costo, complejidad, y escalabilidad.",
-        styles["BD"],
-    ))
-    elements.extend(resource_block(
-        "Advent of Agents — Google Cloud (25 dias)",
-        "Agente basico a multi-agente en produccion. Gemini, ADK, Vertex AI, MCP.",
-        "https://adventofagents.com",
-        [("GRATUITO", FREE), ("GOOGLE CLOUD", COMMUNITY)],
-    ))
-    elements.extend(resource_block(
-        "AWS — FastAPI + Lambda + Docker",
-        "Deploy serverless con FastAPI, Mangum, Lambda, API Gateway, ECR, SAM.",
-        "https://aws.amazon.com/blogs/machine-learning/ | https://dev.to/dev_insights/deploy-fastapi-on-aws-lambda-with-docker-2025-3a3a",
-        [("GRATUITO", FREE)],
-    ))
-    elements.extend(resource_block(
-        "Railway — Push-to-deploy desde GitHub",
-        "Conecta GitHub, click deploy, URL publica. $5 creditos. Ideal MVPs.",
-        "https://railway.app",
-        [("TIER GRATIS", FREE)],
-    ))
-    elements.extend(resource_block(
-        "Render — Deploy con free tier y workers",
-        "Free tier, Postgres/Redis managed, background workers incluidos.",
-        "https://render.com",
-        [("TIER GRATIS", FREE)],
-    ))
-    elements.extend(resource_block(
-        "Fly.io — Deploy global en edge",
-        "35+ regiones, GPUs, scale-to-zero, static IPs. Baja latencia global.",
-        "https://fly.io",
-        [("TIER GRATIS", FREE)],
-    ))
-    elements.extend(resource_block(
-        "DigitalOcean App Platform",
-        "Source builds, Postgres/Redis, CDN. Balance precio/simplicidad.",
-        "https://www.digitalocean.com/products/app-platform",
-        [("TIER GRATIS", FREE)],
-    ))
+    elements = section_divider("Deploy a Produccion (Multi-Cloud)", number)
+    elements.append(
+        Paragraph(
+            "Llevar tu aplicacion de IA desde tu maquina local a servidores "
+            "accesibles al mundo. Desde plataformas simples (push-to-deploy en un "
+            "click) hasta AWS enterprise con Lambda serverless. Cada opcion tiene "
+            "trade-offs de costo, complejidad, y escalabilidad.",
+            styles["BD"],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Advent of Agents — Google Cloud (25 dias)",
+            "Agente basico a multi-agente en produccion. Gemini, ADK, Vertex AI, MCP.",
+            "https://adventofagents.com",
+            [("GRATUITO", FREE), ("GOOGLE CLOUD", COMMUNITY)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "AWS Lambda — Container images",
+            "Docs oficiales para desplegar funciones Lambda como imagenes Docker.",
+            "https://docs.aws.amazon.com/lambda/latest/dg/images-create.html | https://docs.aws.amazon.com/lambda/latest/dg/python-image.html",
+            [("GRATUITO", FREE)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "DEV Community — FastAPI on AWS Lambda with Docker",
+            "Guia practica con FastAPI, Mangum, ECR y Lambda para un deploy end-to-end.",
+            "https://dev.to/dev_insights/deploy-fastapi-on-aws-lambda-with-docker-2025-3a3a",
+            [("GRATUITO", FREE)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Railway — Push-to-deploy desde GitHub",
+            "Conecta GitHub, click deploy, URL publica. $5 creditos. Ideal MVPs.",
+            "https://railway.app",
+            [("TIER GRATIS", FREE)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Render — Deploy con free tier y workers",
+            "Free tier, Postgres/Redis managed, background workers incluidos.",
+            "https://render.com",
+            [("TIER GRATIS", FREE)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Fly.io — Deploy global en edge",
+            "35+ regiones, GPUs, scale-to-zero, static IPs. Baja latencia global.",
+            "https://fly.io",
+            [("TIER GRATIS", FREE)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "DigitalOcean App Platform",
+            "Source builds, Postgres/Redis, CDN. Balance precio/simplicidad.",
+            "https://www.digitalocean.com/products/app-platform",
+            [("TIER GRATIS", FREE)],
+        )
+    )
     return elements
 
 
-def build_section_superagents():
-    """9. Superagentes Personales"""
-    elements = section_divider("Superagentes Personales (OpenClaw / MaxClaw)", "9")
-    elements.append(Paragraph(
-        "La nueva generacion de asistentes de IA que se conectan con tus "
-        "cuentas reales (WhatsApp, Telegram, Slack, email, calendario, GitHub) "
-        "y ejecutan tareas autonomamente. Corren en tu servidor local o en la "
-        "nube, y los controlas desde un chat en el celular como si hablaras "
-        "con un asistente humano.",
-        styles["BD"],
-    ))
+def build_section_superagents(number: int):
+    """9. Super 24/7 Agents"""
+    elements = section_divider("Super 24/7 Agents", number)
+    elements.append(
+        Paragraph(
+            "Agentes de IA que corren continuamente, sin supervision humana constante, "
+            "y toman el control de sistemas reales: navegan la web, abren apps, ejecutan "
+            "comandos, gestionan archivos, envian emails y responden mensajes. Operan "
+            "24/7 en tu servidor local o en la nube, y los controlas desde un simple "
+            "chat como si hablaras con un asistente humano.",
+            styles["BD"],
+        )
+    )
+    elements.append(
+        Paragraph(
+            "OpenClaw, proyecto independiente creado por Peter Steinberger y "
+            "presentado a inicios de 2026, ayudo a empujar esta tendencia de "
+            "agentes que operan computadoras reales. "
+            "Su propuesta llamo la atencion por el control total del computador y las cuentas del usuario, "
+            "convirtiéndose en un asistente personal siempre activo.",
+            styles["BD"],
+        )
+    )
+    elements.append(
+        Paragraph(
+            "<b>n8n — Automatizacion low-code personal y empresarial</b>", styles["BD"]
+        )
+    )
+    elements.extend(
+        resource_block(
+            "n8n — Workflow Automation (open source)",
+            "Herramienta low-code de automatizacion de flujos que conecta mas de 500 "
+            "apps (Slack, GitHub, Gmail, Postgres, HubSpot, Stripe, Google Workspace) "
+            "mediante nodos visuales en un canvas. Permite escribir codigo JavaScript "
+            "o Python directamente cuando se necesita logica avanzada, sin depender "
+            "exclusivamente del enfoque low-code. Soporta MCP para integraciones con "
+            "agentes de IA. Funciona para uso personal (self-hosted gratis con Docker) "
+            "y para empresas (RBAC, SSO/SAML, audit logs, control de versiones con git). "
+            "Sin vendor lock-in: tu infra, tus datos.",
+            "https://n8n.io | https://github.com/n8n-io/n8n",
+            [("GRATUITO", FREE), ("OPEN SOURCE", COMMUNITY)],
+        )
+    )
+    elements.append(Paragraph("<b>Agentes tipo OpenClaw</b>", styles["BD"]))
+    elements.extend(
+        resource_block(
+            "OpenClaw — Proyecto independiente",
+            "Proyecto de computer use creado por Peter Steinberger. Se enfoca en "
+            "automatizar tareas sobre una computadora real o virtual, llevando la "
+            "idea de un asistente personal que puede operar interfaces, coordinar "
+            "acciones y mantener flujos de trabajo continuos.",
+            "https://openclaw.ai/",
+            [("COMUNIDAD", COMMUNITY)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "MaxClaw — Agente local en Go",
+            "Agente open-source autoalojado escrito en Go. Ofrece CLI, interfaz web "
+            "y desktop con sesiones, memoria persistente, tareas programadas e "
+            "integraciones multi-canal (Telegram, WhatsApp, Discord). Implementa un "
+            "ciclo de vida adaptativo de seis capas con recuperacion de errores, "
+            "compresion de contexto y fallback de modelos. Compatible con Anthropic "
+            "y OpenAI.",
+            "https://github.com/Lichas/maxclaw",
+            [("OPEN SOURCE", COMMUNITY)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "KimiClaw",
+            "Variante de agente de uso de computadora construida sobre los modelos "
+            "Kimi de Moonshot AI, enfocada en tareas de automatizacion web y "
+            "procesamiento de documentos de larga duracion.",
+            "https://www.kimi.com/bot",
+            [("OPEN SOURCE", COMMUNITY)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "KiloClaw — Extension de KiloCode",
+            "Extensión de KiloCode para ser alternativa a OpenClaw",
+            "https://kilo.ai/kiloclaw",
+            [("OPEN SOURCE", COMMUNITY)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "NemoClaw — Agente basado en NVIDIA NeMo",
+            "Agente de uso de computadora construido sobre el ecosistema NeMo de "
+            "NVIDIA, orientado a automatizacion de flujos de trabajo en entornos "
+            "con aceleracion GPU y modelos LLM on-premise.",
+            "https://www.nvidia.com/es-la/ai/nemoclaw/",
+            [("OPEN SOURCE", COMMUNITY)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "Perplexity Computer — Agente de Perplexity AI",
+            "Agente de uso de computadora de Perplexity AI que combina busqueda "
+            "en tiempo real con control de escritorio, permitiendo investigar, "
+            "resumir y ejecutar tareas basadas en informacion actualizada de la web.",
+            "https://www.perplexity.ai/computer/new",
+            [("OFICIAL", OFFICIAL)],
+        )
+    )
     return elements
