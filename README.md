@@ -6,6 +6,25 @@ Alternativa gratuita a la especializacion paga de IBM [RAG and Agentic AI Profes
 
 **Camilo Hernandez Ruiz - Ingeniero de Software y Automatizaciones**
 
+## Tabla Resumen: Especializacion Paga de IBM vs. Ruta Gratuita
+
+| Tema | IBM (Paga) | Ruta Gratuita |
+|---|---|---|
+| Fundamentos de Transformers y LLMs | Parcial | Hugging Face - LLM Course |
+| Agent Skills (estandar abierto agentskills.io) | NO cubre | agentskills.io + Anthropic Academy + skills.sh + agentskill.sh |
+| RAG pipelines, FAISS, vectores | Cubre | DeepLearning.AI - RAG course |
+| LangChain + LangGraph | Cubre | LangChain Academy + DeepLearning.AI (3 cursos) |
+| MCP (Model Context Protocol) | Cubre (FastMCP) | HuggingFace + Anthropic + Microsoft |
+| LLMs locales: fine-tuning, Ollama, open-weight | NO cubre | Unsloth + HF TRL + Ollama + Decoding AI Magazine |
+| Multi-agente (CrewAI, AG2) | Cubre | DeepLearning.AI + docs oficiales |
+| Multimodal AI | Cubre | DeepLearning.AI short courses |
+| Deploy multi-cloud (AWS, Railway, Fly.io, etc.) | Parcial (Gradio, Flask) | Advent of Agents + AWS Lambda docs + Railway/Render/Fly.io/DO |
+| Super 24/7 Agents | NO cubre | OpenClaw + MaxClaw + KimiClaw + KiloClaw + NemoClaw + Perplexity Computer + n8n |
+
+> Ventaja de la ruta gratuita: La especializacion paga de IBM no cubre Agent Skills (estandar abierto), fine-tuning/deployment local de modelos open-weight, ni superagentes personales (OpenClaw/MaxClaw). Estos tres temas son criticos para privacidad de datos, reduccion de costos, modelos especializados, y asistentes autonomos que funcionan con cualquier LLM.
+
+Compilado en marzo 2026. Todos los recursos listados son gratuitos al momento de publicacion.
+
 ## 1. Agent Skills (Estándar Abierto)
 
 Agent Skills es un estandar abierto: carpetas con SKILL.md que cualquier LLM o agente puede usar. Adoptado por Claude, OpenAI Codex, Cursor, OpenClaw, Spring AI, Letta, Roo Code, y mas. Escribe una vez, usa en cualquier plataforma.
@@ -102,7 +121,7 @@ Frameworks para crear equipos de agentes de IA que colaboran entre sí adicional
   - https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/
   - https://microsoft.github.io/autogen
 
-- **AG2 - Fork open source de AutoGen (formerly AutoGen)** [GRATUITO | OPEN SOURCE]
+- **AG2 - Fork open source de AutoGen** [GRATUITO | OPEN SOURCE]
   AG2 es la evolucion independiente de AutoGen 0.2, mantenida por la comunidad bajo la org ag2ai. Misma API (import autogen), licencia Apache 2.0, con roadmap propio separado de Microsoft.
   - https://ag2.ai
   - https://github.com/ag2ai/ag2
@@ -181,8 +200,8 @@ Modelos que procesan y generan multiples tipos de datos: texto, imagenes, audio,
 
 Llevar tu aplicacion de IA desde tu maquina local a servidores accesibles al mundo. Desde plataformas simples (push-to-deploy en un click) hasta AWS enterprise con Lambda serverless. Cada opcion tiene trade-offs de costo, complejidad, y escalabilidad.
 
-- **Advent of Agents - Google Cloud (25 dias)** [GRATUITO | GOOGLE CLOUD]
-  Agente basico a multi-agente en produccion. Gemini, ADK, Vertex AI, MCP.
+- **Advent of Agents - Google Cloud (31 dias)** [GRATUITO | GOOGLE CLOUD]
+  Ruta de 31 capítulos para hacer 1 por día, desde agente basico a multi-agente en produccion. Gemini, ADK, Vertex AI, MCP.
   - https://adventofagents.com
 
 - **AWS Lambda - Container images** [GRATUITO]
@@ -248,22 +267,3 @@ OpenClaw, proyecto independiente creado por Peter Steinberger y presentado a ini
 - **Perplexity Computer - Agente de Perplexity AI** [OFICIAL]
   Agente de uso de computadora de Perplexity AI que combina busqueda en tiempo real con control de escritorio, permitiendo investigar, resumir y ejecutar tareas basadas en informacion actualizada de la web.
   - https://www.perplexity.ai/computer/new
-
-## Tabla Resumen: Especializacion Paga de IBM vs. Ruta Gratuita
-
-| Tema | IBM (Paga) | Ruta Gratuita |
-|---|---|---|
-| Fundamentos de Transformers y LLMs | Parcial | Hugging Face - LLM Course |
-| Agent Skills (estandar abierto agentskills.io) | NO cubre | agentskills.io + Anthropic Academy + skills.sh + agentskill.sh |
-| RAG pipelines, FAISS, vectores | Cubre | DeepLearning.AI - RAG course |
-| LangChain + LangGraph | Cubre | LangChain Academy + DeepLearning.AI (3 cursos) |
-| MCP (Model Context Protocol) | Cubre (FastMCP) | HuggingFace + Anthropic + Microsoft |
-| LLMs locales: fine-tuning, Ollama, open-weight | NO cubre | Unsloth + HF TRL + Ollama + Decoding AI Magazine |
-| Multi-agente (CrewAI, AG2) | Cubre | DeepLearning.AI + docs oficiales |
-| Multimodal AI | Cubre | DeepLearning.AI short courses |
-| Deploy multi-cloud (AWS, Railway, Fly.io, etc.) | Parcial (Gradio, Flask) | Advent of Agents + AWS Lambda docs + Railway/Render/Fly.io/DO |
-| Super 24/7 Agents | NO cubre | OpenClaw + MaxClaw + KimiClaw + KiloClaw + NemoClaw + Perplexity Computer + n8n |
-
-> Ventaja de la ruta gratuita: La especializacion paga de IBM no cubre Agent Skills (estandar abierto), fine-tuning/deployment local de modelos open-weight, ni superagentes personales (OpenClaw/MaxClaw). Estos tres temas son criticos para privacidad de datos, reduccion de costos, modelos especializados, y asistentes autonomos que funcionan con cualquier LLM.
-
-Compilado en marzo 2026. Todos los recursos listados son gratuitos al momento de publicacion.

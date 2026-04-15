@@ -10,9 +10,9 @@ def build_pdf():
     """Assemble all sections and generate the PDF."""
     story = []
     story.extend(build_header())
-    story.extend(build_sections_story())
     story.extend(build_comparison_table())
     story.extend(build_footer())
+    story.extend(build_sections_story())
     doc.build(story)
 
 

@@ -25,6 +25,23 @@ def render_readme_markdown() -> str:
         "",
     ]
 
+    lines.append(f"## {content.comparison.title}")
+    lines.append("")
+    lines.append("| " + " | ".join(content.comparison.headers) + " |")
+    lines.append("|" + "---|" * len(content.comparison.headers))
+    for row in content.comparison.rows:
+        escaped = [cell.replace("|", "\\|") for cell in row]
+        lines.append("| " + " | ".join(escaped) + " |")
+    lines.extend(
+        [
+            "",
+            f"> {content.closing_note}",
+            "",
+            content.publication_note,
+            "",
+        ]
+    )
+
     for number, section in enumerate(content.sections, start=1):
         lines.append(f"## {number}. {section.title}")
         lines.append("")
@@ -42,22 +59,6 @@ def render_readme_markdown() -> str:
                 lines.append(f"  - {url}")
             lines.append("")
 
-    lines.append(f"## {content.comparison.title}")
-    lines.append("")
-    lines.append("| " + " | ".join(content.comparison.headers) + " |")
-    lines.append("|" + "---|" * len(content.comparison.headers))
-    for row in content.comparison.rows:
-        escaped = [cell.replace("|", "\\|") for cell in row]
-        lines.append("| " + " | ".join(escaped) + " |")
-    lines.extend(
-        [
-            "",
-            f"> {content.closing_note}",
-            "",
-            content.publication_note,
-            "",
-        ]
-    )
     return "\n".join(lines)
 
 
