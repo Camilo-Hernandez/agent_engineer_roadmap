@@ -1,4 +1,4 @@
-# Hoja de Ruta Gratuita
+# Especialización Gratuita de Ingeniero de Sistemas Multiagente
 
 Transformers, RAG, Agentic AI, Agent Skills, MCP, LLMs Locales y Superagentes
 

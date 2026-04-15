@@ -45,7 +45,7 @@ class RoadmapContent:
 
 
 ROADMAP_CONTENT = RoadmapContent(
-    title="Hoja de Ruta Gratuita",
+    title="Especialización Gratuita de Ingeniero de Sistemas Multiagente",
     subtitle="Transformers, RAG, Agentic AI, Agent Skills, MCP, LLMs Locales y Superagentes",
     intro="Alternativa gratuita a la especializacion paga de IBM",
     intro_link_label="RAG and Agentic AI Professional Certificate",
