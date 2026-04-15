@@ -86,9 +86,11 @@ LangChain es el framework mas popular para construir aplicaciones con LLMs: cade
   - https://docs.langchain.com/oss/python/learn
   - https://github.com/langchain-ai/langgraph
 
-## 6. Sistemas Multi-Agente (CrewAI, AG2/AutoGen)
+## 6. Sistemas Multi-Agente (CrewAI, AG2/AutoGen, Google ADK, AWS Bedrock + AgentCore)
 
-Frameworks para crear equipos de agentes de IA que colaboran entre si: cada agente tiene un rol especializado (investigador, escritor, critico) y se comunican para resolver tareas complejas que un solo agente no podria manejar.
+Frameworks para crear equipos de agentes de IA que colaboran entre sí adicionales a LangChain & LangGraph. En un sistema multi-agente, cada agente tiene un rol especializado (investigador, planeador, ejecutor, critico, archivador, ...) y se comunican para resolver tareas complejas que un solo agente no podria manejar.
+
+### AWS / Bedrock - Fundamentos y Ecosistema
 
 - **DeepLearning.AI - Design, Develop, and Deploy Multi-Agent Systems with CrewAI** [GRATUITO]
   Aprende a construir sistemas multi-agente que automaticen flujos de trabajo complejos end-to-end.
@@ -105,6 +107,18 @@ Frameworks para crear equipos de agentes de IA que colaboran entre si: cada agen
   - https://ag2.ai
   - https://github.com/ag2ai/ag2
   - https://docs.ag2.ai
+
+- **AWS - Learn About AI (portal oficial)** [GRATUITO | OFICIAL]
+  Portal de aprendizaje oficial de AWS para IA y ML: rutas de aprendizaje, certificaciones, tutoriales de Bedrock, SageMaker y servicios de IA gestionados.
+  - https://aws.amazon.com/es/training/learn-about/ai/
+
+- **AWS Skill Builder - Introduction to Generative AI: Art of the Possible** [GRATUITO | OFICIAL]
+  Modulo oficial introductorio de AWS Skill Builder: conceptos clave de GenAI, casos de uso empresariales y posibilidades con los servicios de AWS.
+  - https://skillbuilder.aws/learn/ZEVZZ1D4AS/introduction-to-generative-ai--art-of-the-possible/
+
+- **AWS Skill Builder - Building Production-Ready AI Agents with Amazon Bedrock AgentCore** [GRATUITO | OFICIAL]
+  Modulo oficial introductorio de AWS Skill Builder: conceptos clave de GenAI, casos de uso empresariales y posibilidades con los servicios de AWS.
+  - https://skillbuilder.aws/learn/4G7V8NQB5B/building-productionready-ai-agents-with-amazon-bedrock-agentcore/7DY16CFWTC
 
 - **Google ADK - Agent Development Kit** [GRATUITO | OFICIAL]
   Framework oficial de Google para construir sistemas multi-agente. Disponible en Python, TypeScript, Go y Java. Soporta LLM agents, Workflow agents (sequential, loop, parallel nativo) y Custom agents. Incluye el protocolo A2A (Agent-to-Agent) para comunicacion entre agentes de distintos frameworks. Integracion nativa con Google Cloud (Vertex AI, Cloud Run, GKE).
@@ -166,16 +180,6 @@ Modelos que procesan y generan multiples tipos de datos: texto, imagenes, audio,
 ## 9. Deploy a Produccion (Multi-Cloud)
 
 Llevar tu aplicacion de IA desde tu maquina local a servidores accesibles al mundo. Desde plataformas simples (push-to-deploy en un click) hasta AWS enterprise con Lambda serverless. Cada opcion tiene trade-offs de costo, complejidad, y escalabilidad.
-
-### AWS / Bedrock - Fundamentos y Ecosistema
-
-- **AWS - Learn About AI (portal oficial)** [GRATUITO | OFICIAL]
-  Portal de aprendizaje oficial de AWS para IA y ML: rutas de aprendizaje, certificaciones, tutoriales de Bedrock, SageMaker y servicios de IA gestionados.
-  - https://aws.amazon.com/es/training/learn-about/ai/
-
-- **AWS Skill Builder - Introduction to Generative AI: Art of the Possible** [GRATUITO | OFICIAL]
-  Modulo oficial introductorio de AWS Skill Builder: conceptos clave de GenAI, casos de uso empresariales y posibilidades con los servicios de AWS.
-  - https://skillbuilder.aws/learn/ZEVZZ1D4AS/introduction-to-generative-ai--art-of-the-possible/
 
 - **Advent of Agents - Google Cloud (25 dias)** [GRATUITO | GOOGLE CLOUD]
   Agente basico a multi-agente en produccion. Gemini, ADK, Vertex AI, MCP.

@@ -211,12 +211,13 @@ ROADMAP_CONTENT = RoadmapContent(
             ),
         ),
         Section(
-            title="Sistemas Multi-Agente (CrewAI, AG2/AutoGen)",
+            title="Sistemas Multi-Agente (CrewAI, AG2/AutoGen, Google ADK, AWS Bedrock + AgentCore)",
             blocks=(
                 SectionBlock(
                     "paragraph",
-                    "Frameworks para crear equipos de agentes de IA que colaboran entre si: cada agente tiene un rol especializado (investigador, escritor, critico) y se comunican para resolver tareas complejas que un solo agente no podria manejar.",
+                    "Frameworks para crear equipos de agentes de IA que colaboran entre sí adicionales a LangChain & LangGraph. En un sistema multi-agente, cada agente tiene un rol especializado (investigador, planeador, ejecutor, critico, archivador, ...) y se comunican para resolver tareas complejas que un solo agente no podria manejar.",
                 ),
+                SectionBlock("heading", "AWS / Bedrock - Fundamentos y Ecosistema"),
             ),
             resources=(
                 Resource(
@@ -238,7 +239,7 @@ ROADMAP_CONTENT = RoadmapContent(
                     ("GRATUITO", "OFICIAL"),
                 ),
                 Resource(
-                    "AG2 - Fork open source de AutoGen (formerly AutoGen)",
+                    "AG2 - Fork open source de AutoGen",
                     "AG2 es la evolucion independiente de AutoGen 0.2, mantenida por la comunidad bajo la org ag2ai. Misma API (import autogen), licencia Apache 2.0, con roadmap propio separado de Microsoft.",
                     (
                         "https://ag2.ai",
@@ -246,6 +247,28 @@ ROADMAP_CONTENT = RoadmapContent(
                         "https://docs.ag2.ai",
                     ),
                     ("GRATUITO", "OPEN SOURCE"),
+                ),
+                Resource(
+                    "AWS - Learn About AI (portal oficial)",
+                    "Portal de aprendizaje oficial de AWS para IA y ML: rutas de aprendizaje, certificaciones, tutoriales de Bedrock, SageMaker y servicios de IA gestionados.",
+                    ("https://aws.amazon.com/es/training/learn-about/ai/",),
+                    ("GRATUITO", "OFICIAL"),
+                ),
+                Resource(
+                    "AWS Skill Builder - Introduction to Generative AI: Art of the Possible",
+                    "Modulo oficial introductorio de AWS Skill Builder: conceptos clave de GenAI, casos de uso empresariales y posibilidades con los servicios de AWS.",
+                    (
+                        "https://skillbuilder.aws/learn/ZEVZZ1D4AS/introduction-to-generative-ai--art-of-the-possible/",
+                    ),
+                    ("GRATUITO", "OFICIAL"),
+                ),
+                Resource(
+                    "AWS Skill Builder - Building Production-Ready AI Agents with Amazon Bedrock AgentCore",
+                    "Modulo oficial introductorio de AWS Skill Builder: conceptos clave de GenAI, casos de uso empresariales y posibilidades con los servicios de AWS.",
+                    (
+                        "https://skillbuilder.aws/learn/4G7V8NQB5B/building-productionready-ai-agents-with-amazon-bedrock-agentcore/7DY16CFWTC",
+                    ),
+                    ("GRATUITO", "OFICIAL"),
                 ),
                 Resource(
                     "Google ADK - Agent Development Kit",
@@ -352,26 +375,11 @@ ROADMAP_CONTENT = RoadmapContent(
                     "paragraph",
                     "Llevar tu aplicacion de IA desde tu maquina local a servidores accesibles al mundo. Desde plataformas simples (push-to-deploy en un click) hasta AWS enterprise con Lambda serverless. Cada opcion tiene trade-offs de costo, complejidad, y escalabilidad.",
                 ),
-                SectionBlock("heading", "AWS / Bedrock - Fundamentos y Ecosistema"),
             ),
             resources=(
                 Resource(
-                    "AWS - Learn About AI (portal oficial)",
-                    "Portal de aprendizaje oficial de AWS para IA y ML: rutas de aprendizaje, certificaciones, tutoriales de Bedrock, SageMaker y servicios de IA gestionados.",
-                    ("https://aws.amazon.com/es/training/learn-about/ai/",),
-                    ("GRATUITO", "OFICIAL"),
-                ),
-                Resource(
-                    "AWS Skill Builder - Introduction to Generative AI: Art of the Possible",
-                    "Modulo oficial introductorio de AWS Skill Builder: conceptos clave de GenAI, casos de uso empresariales y posibilidades con los servicios de AWS.",
-                    (
-                        "https://skillbuilder.aws/learn/ZEVZZ1D4AS/introduction-to-generative-ai--art-of-the-possible/",
-                    ),
-                    ("GRATUITO", "OFICIAL"),
-                ),
-                Resource(
-                    "Advent of Agents - Google Cloud (25 dias)",
-                    "Agente basico a multi-agente en produccion. Gemini, ADK, Vertex AI, MCP.",
+                    "Advent of Agents - Google Cloud (31 dias)",
+                    "Ruta de 31 capítulos para hacer 1 por día, desde agente basico a multi-agente en produccion. Gemini, ADK, Vertex AI, MCP.",
                     ("https://adventofagents.com",),
                     ("GRATUITO", "GOOGLE CLOUD"),
                 ),
