@@ -4,6 +4,30 @@ from .config import styles, FREE, OFFICIAL, COMMUNITY
 from .helpers import section_divider, resource_block
 
 
+def build_section_transformers_llms(number):
+    """1. Fundamentos de Transformers y LLMs"""
+    elements = section_divider("Fundamentos de Transformers y LLMs", number)
+    elements.append(
+        Paragraph(
+            "Antes de meterse en RAG, agentes, MCP o fine-tuning local, conviene "
+            "entender que es un Transformer, como se diferencian las arquitecturas "
+            "encoder, decoder y encoder-decoder, como usar modelos desde el Hub de "
+            "Hugging Face, y que papel juegan tokenization, datasets y ajuste fino.",
+            styles["BD"],
+        )
+    )
+    elements.append(Paragraph("<b>Courses</b>", styles["BD"]))
+    elements.extend(
+        resource_block(
+            "Hugging Face — LLM Course",
+            "Curso oficial, gratuito y muy solido para entender Transformers, usar pipeline(), trabajar con el Hub, hacer fine-tuning y dominar Datasets/Tokenizers antes de pasar a RAG y agentes.",
+            "https://huggingface.co/learn/llm-course/es/chapter1/1 | https://huggingface.co/learn/llm-course/es",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
+    return elements
+
+
 def build_section_agent_skills(number):
     """1. Agent Skills"""
     elements = section_divider("Agent Skills (Estándar Abierto)", number)
@@ -341,9 +365,18 @@ def build_section_multi_agent(number):
             "Modelo supervisor + colaboradores: cada agente tiene rol especializado, acceso a APIs (action groups), "
             "knowledge bases (RAG), guardrails y memory retention. "
             "Ideal para stacks AWS enterprise. Alto vendor lock-in vs frameworks open source. "
-            "AgentCore permite ademas deployar agentes de cualquier framework (AG2, ADK) en infraestructura AWS.",
+            "AgentCore permite ademas desplegar agentes de cualquier framework (AG2, ADK) en infraestructura AWS.",
             "https://aws.amazon.com/bedrock/agents/ | https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
             [("PAGO", OFFICIAL), ("AWS", OFFICIAL)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "DeepLearning.AI — Serverless Agentic Workflows with Amazon Bedrock",
+            "Curso practico para construir flujos agenticos serverless directamente sobre Bedrock: "
+            "invocacion de agentes, action groups, tool use y despliegue sin gestionar infraestructura.",
+            "https://learn.deeplearning.ai/courses/serverless-agentic-workflows-with-amazon-bedrock/",
+            [("GRATUITO", FREE)],
         )
     )
     return elements
@@ -382,6 +415,27 @@ def build_section_deploy(number):
             "click) hasta AWS enterprise con Lambda serverless. Cada opcion tiene "
             "trade-offs de costo, complejidad, y escalabilidad.",
             styles["BD"],
+        )
+    )
+    elements.append(
+        Paragraph("<b>AWS / Bedrock — Fundamentos y Ecosistema</b>", styles["BD"])
+    )
+    elements.extend(
+        resource_block(
+            "AWS — Learn About AI (portal oficial)",
+            "Portal de aprendizaje oficial de AWS para IA y ML: rutas de aprendizaje, certificaciones, "
+            "tutoriales de Bedrock, SageMaker y servicios de IA gestionados.",
+            "https://aws.amazon.com/es/training/learn-about/ai/",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
+        )
+    )
+    elements.extend(
+        resource_block(
+            "AWS Skill Builder — Introduction to Generative AI: Art of the Possible",
+            "Modulo oficial introductorio de AWS Skill Builder: conceptos clave de GenAI, "
+            "casos de uso empresariales y posibilidades con los servicios de AWS.",
+            "https://skillbuilder.aws/learn/ZEVZZ1D4AS/introduction-to-generative-ai--art-of-the-possible/",
+            [("GRATUITO", FREE), ("OFICIAL", OFFICIAL)],
         )
     )
     elements.extend(

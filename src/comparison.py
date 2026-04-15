@@ -25,6 +25,11 @@ def build_comparison_table():
             cell("<b>Ruta Gratuita</b>", "CH"),
         ],
         [
+            cell("Fundamentos de Transformers y LLMs"),
+            cell("Parcial"),
+            cell("Hugging Face — LLM Course"),
+        ],
+        [
             cell("Agent Skills (estandar abierto agentskills.io)"),
             cell(no_cover),
             cell("agentskills.io + Anthropic Academy + skills.sh + agentskill.sh"),

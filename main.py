@@ -1,6 +1,7 @@
 from src.config import doc
 from src.header import build_header
 from src.sections import (
+    build_section_transformers_llms,
     build_section_agent_skills,
     build_section_rag,
     build_section_langchain,
@@ -21,6 +22,7 @@ def build_pdf():
     story.extend(build_header())
     section_builders = [
         build_section_agent_skills,
+        build_section_transformers_llms,
         build_section_rag,
         build_section_mcp,
         build_section_langchain,
