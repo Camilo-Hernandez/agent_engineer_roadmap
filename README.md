@@ -23,7 +23,7 @@ Alternativa gratuita a la especializacion paga de IBM [RAG and Agentic AI Profes
 
 > Ventaja de la ruta gratuita: La especializacion paga de IBM no cubre Agent Skills (estandar abierto), fine-tuning/deployment local de modelos open-weight, ni superagentes personales (OpenClaw/MaxClaw). Estos tres temas son criticos para privacidad de datos, reduccion de costos, modelos especializados, y asistentes autonomos que funcionan con cualquier LLM.
 
-Compilado en marzo 2026. Todos los recursos listados son gratuitos al momento de publicacion.
+Compilado en abril 2026. Todos los recursos listados son gratuitos al momento de publicacion.
 
 ## 1. Agent Skills (Estándar Abierto)
 
@@ -84,7 +84,7 @@ Protocolo abierto creado por Anthropic que estandariza como los LLMs se conectan
   Open-source: Python, TypeScript, .NET, Java, Rust. Spec MCP 2025-11-25.
   - https://github.com/microsoft/mcp-for-beginners
 
-## 5. LangChain + LangGraph
+## 5. Sistemas multiagente con LangChain + LangGraph
 
 LangChain es el framework mas popular para construir aplicaciones con LLMs: cadenas de prompts, herramientas, y agentes. LangGraph lo extiende con grafos de estado que permiten memoria, iteracion, logica condicional, y workflows multi-agente complejos.
 

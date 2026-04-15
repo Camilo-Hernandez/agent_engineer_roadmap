@@ -171,7 +171,7 @@ ROADMAP_CONTENT = RoadmapContent(
             ),
         ),
         Section(
-            title="LangChain + LangGraph",
+            title="Sistemas multiagente con LangChain + LangGraph",
             blocks=(
                 SectionBlock(
                     "paragraph",
