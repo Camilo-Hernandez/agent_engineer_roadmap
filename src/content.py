@@ -539,7 +539,7 @@ ROADMAP_CONTENT = RoadmapContent(
         "privacidad de datos, reduccion de costos, modelos especializados, y asistentes "
         "autonomos que funcionan con cualquier LLM."
     ),
-    publication_note="Compilado en marzo 2026. Todos los recursos listados son gratuitos al momento de publicacion.",
+    publication_note="Compilado en abril 2026. Todos los recursos listados son gratuitos al momento de publicacion.",
 )
 
 
