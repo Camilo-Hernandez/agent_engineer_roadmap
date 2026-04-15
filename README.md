@@ -1,4 +1,4 @@
-# Especialización Gratuita de Ingeniero de Sistemas Multiagente
+# Especialización Gratuita de Ingeniería de Sistemas Multiagente
 
 Transformers, RAG, Agentic AI, Agent Skills, MCP, LLMs Locales y Superagentes
 
