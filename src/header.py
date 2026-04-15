@@ -40,10 +40,10 @@ def build_header():
             "Camilo Hernandez Ruiz — Ingeniero de Software y Automatizaciones",
             styles["AU"],
         ),
-        Paragraph(
-            f'<img src="{GMAIL_ICON}" width="12" height="9" valign="middle"/> '
-            '<a href="mailto:camihruiz24+iaroadmap@gmail.com" '
-            'color="#2980b9">camihruiz24@gmail.com</a>',
-            styles["AE"],
-        ),
+        # Paragraph(
+        #     f'<img src="{GMAIL_ICON}" width="12" height="9" valign="middle"/> '
+        #     '<a href="mailto:camihruiz24+iaroadmap@gmail.com" '
+        #     'color="#2980b9">camihruiz24@gmail.com</a>',
+        #     styles["AE"],
+        # ),
     ]

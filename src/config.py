@@ -1,3 +1,5 @@
+from ctypes.wintypes import SHORT
+
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.colors import HexColor, white
@@ -19,6 +21,7 @@ ALT_ROW_BG = HexColor("#f0f4f8")
 TAG_FREE = HexColor("#27ae60")
 TAG_OFFICIAL = HexColor("#2980b9")
 TAG_COMMUNITY = HexColor("#8e44ad")
+TAG_SHORT = HexColor("#7144ad")
 WARNING_BG = HexColor("#fdf2e9")
 DIVIDER_COLOR = HexColor("#dee2e6")
 
@@ -27,6 +30,7 @@ DIVIDER_COLOR = HexColor("#dee2e6")
 FREE = TAG_FREE.hexval()
 OFFICIAL = TAG_OFFICIAL.hexval()
 COMMUNITY = TAG_COMMUNITY.hexval()
+SHORT = TAG_SHORT.hexval()
 
 # ── Document Setup ──────────────────────────────────────────────────────────────
 
