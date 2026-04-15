@@ -1,6 +1,6 @@
-from reportlab.platypus import Spacer, Paragraph, HRFlowable
+from reportlab.platypus import HRFlowable, Paragraph, Spacer
 
-from .config import styles, DIVIDER_COLOR
+from .config import DIVIDER_COLOR, TAG_COLORS, styles
 
 
 def section_divider(title, number):
@@ -17,39 +17,24 @@ def section_divider(title, number):
     ]
 
 
-def make_link(url_text):
-    """Convert display URLs into clickable <a href> links. Handles '|' separated multi-URLs."""
-    parts = [p.strip() for p in url_text.split("|")]
-    linked = []
-    for part in parts:
-        if part.startswith("http"):
-            linked.append(f'<a href="{part}" color="#2980b9">{part}</a>')
-        elif "(" in part:
-            domain = part.split("(")[0].strip()
-            note = "(" + part.split("(")[1]
-            linked.append(
-                f'<a href="https://{domain}" color="#2980b9">'
-                f"https://{domain}</a> {note}"
-            )
-        else:
-            linked.append(
-                f'<a href="https://{part}" color="#2980b9">https://{part}</a>'
-            )
-    return "  |  ".join(linked)
+def make_link(url: str):
+    """Convert a URL into a clickable ReportLab link."""
+    if url.startswith("http"):
+        return f'<a href="{url}" color="#2980b9">{url}</a>'
+    return f'<a href="https://{url}" color="#2980b9">https://{url}</a>'
 
 
-def resource_block(title, description, url, tags=None):
-    """Create a resource entry with title, description, URL, and optional tags."""
+def resource_block(title, description, urls, tags=None):
+    """Create a resource entry with title, description, URLs, and optional tags."""
     tag_html = ""
     if tags:
-        for tag_label, tag_color in tags:
+        for tag_label in tags:
+            tag_color = TAG_COLORS.get(tag_label, TAG_COLORS["GRATUITO"])
             tag_html += f' <font color="{tag_color}" size="8">[{tag_label}]</font>'
-    parts = [p.strip() for p in url.split("|")]
     items = [
         Paragraph(f"&#9654; {title}{tag_html}", styles["RT"]),
         Paragraph(description, styles["RD"]),
     ]
-    for part in parts:
-        link_html = make_link(part)
-        items.append(Paragraph(f"&#8594; {link_html}", styles["UL"]))
+    for url in urls:
+        items.append(Paragraph(f"&#8594; {make_link(url)}", styles["UL"]))
     return items

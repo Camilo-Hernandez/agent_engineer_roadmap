@@ -1,13 +1,8 @@
 from reportlab.lib.units import inch
-from reportlab.platypus import Spacer, Paragraph, Table, TableStyle, HRFlowable
+from reportlab.platypus import HRFlowable, Paragraph, Spacer, Table, TableStyle
 
-from .config import (
-    styles,
-    ACCENT_TEAL,
-    TABLE_HEADER_BG,
-    ALT_ROW_BG,
-    DIVIDER_COLOR,
-)
+from .config import ACCENT_TEAL, ALT_ROW_BG, DIVIDER_COLOR, TABLE_HEADER_BG, styles
+from .content import get_roadmap_content
 
 
 def build_comparison_table():
@@ -16,63 +11,14 @@ def build_comparison_table():
     def cell(text, style_name="CE"):
         return Paragraph(text, styles[style_name])
 
-    no_cover = '<b><font color="#c0392b">NO cubre</font></b>'
+    def format_cell(text):
+        if text == "NO cubre":
+            return '<b><font color="#c0392b">NO cubre</font></b>'
+        return text
 
-    rows = [
-        [
-            cell("<b>Tema</b>", "CH"),
-            cell("<b>IBM (Paga)</b>", "CH"),
-            cell("<b>Ruta Gratuita</b>", "CH"),
-        ],
-        [
-            cell("Fundamentos de Transformers y LLMs"),
-            cell("Parcial"),
-            cell("Hugging Face — LLM Course"),
-        ],
-        [
-            cell("Agent Skills (estandar abierto agentskills.io)"),
-            cell(no_cover),
-            cell("agentskills.io + Anthropic Academy + skills.sh + agentskill.sh"),
-        ],
-        [
-            cell("RAG pipelines, FAISS, vectores"),
-            cell("Cubre"),
-            cell("DeepLearning.AI — RAG course"),
-        ],
-        [
-            cell("LangChain + LangGraph"),
-            cell("Cubre"),
-            cell("LangChain Academy + DeepLearning.AI (3 cursos)"),
-        ],
-        [
-            cell("MCP (Model Context Protocol)"),
-            cell("Cubre (FastMCP)"),
-            cell("HuggingFace + Anthropic + Microsoft"),
-        ],
-        [
-            cell("LLMs locales: fine-tuning, Ollama, open-weight"),
-            cell(no_cover),
-            cell("Unsloth + HF TRL + Ollama + Decoding AI Magazine"),
-        ],
-        [
-            cell("Multi-agente (CrewAI, AG2)"),
-            cell("Cubre"),
-            cell("DeepLearning.AI + docs oficiales"),
-        ],
-        [cell("Multimodal AI"), cell("Cubre"), cell("DeepLearning.AI short courses")],
-        [
-            cell("Deploy multi-cloud (AWS, Railway, Fly.io, etc.)"),
-            cell("Parcial (Gradio, Flask)"),
-            cell("Advent of Agents + AWS Lambda docs + Railway/Render/Fly.io/DO"),
-        ],
-        [
-            cell("Super 24/7 Agents"),
-            cell(no_cover),
-            cell(
-                "OpenClaw + MaxClaw + KimiClaw + KiloClaw + NemoClaw + Perplexity Computer + n8n"
-            ),
-        ],
-    ]
+    content = get_roadmap_content().comparison
+    rows = [[cell(f"<b>{header}</b>", "CH") for header in content.headers]]
+    rows.extend([[cell(format_cell(value)) for value in row] for row in content.rows])
 
     col_widths = [1.55 * inch, 1.55 * inch, 3.5 * inch]
     table = Table(rows, colWidths=col_widths, repeatRows=1)
@@ -87,12 +33,12 @@ def build_comparison_table():
         ("RIGHTPADDING", (0, 0), (-1, -1), 5),
         ("GRID", (0, 0), (-1, -1), 0.5, DIVIDER_COLOR),
     ]
-    for i in range(1, len(rows)):
-        if i % 2 == 0:
-            style_commands.append(("BACKGROUND", (0, i), (-1, i), ALT_ROW_BG))
+    for index in range(1, len(rows)):
+        if index % 2 == 0:
+            style_commands.append(("BACKGROUND", (0, index), (-1, index), ALT_ROW_BG))
     table.setStyle(TableStyle(style_commands))
 
-    elements = [
+    return [
         Spacer(1, 16),
         HRFlowable(
             width="100%",
@@ -100,10 +46,6 @@ def build_comparison_table():
             color=ACCENT_TEAL,
             spaceAfter=8,
         ),
-        Paragraph(
-            "Tabla Resumen: Especializacion Paga de IBM vs. Ruta Gratuita",
-            styles["SH"],
-        ),
+        Paragraph(content.title, styles["SH"]),
         table,
     ]
-    return elements
